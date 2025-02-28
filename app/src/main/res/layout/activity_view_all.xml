@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_teal"
+    android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/dark_teal"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewAllTitleTextView"
+            android:text=""
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_gravity="center" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="Search Courses"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/search_view_background"
+        android:iconifiedByDefault="false"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:searchIcon="@drawable/ic_search_white_24dp" />
+    <HorizontalScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:scrollbars="none"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp">
+    <LinearLayout
+        android:id="@+id/filterBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp">
+
+        <Button
+            android:id="@+id/ownedFilterButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Owned"
+            android:background="@drawable/filter_button_background"
+            android:textColor="@color/black"
+            android:layout_marginEnd="8dp"/>
+        <Button
+            android:id="@+id/skillFilterButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skill"
+            android:background="@drawable/filter_button_background"
+            android:textColor="@color/black"
+            android:layout_marginEnd="8dp"/>
+        <Button
+            android:id="@+id/curriculumFilterButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Curriculum"
+            android:background="@drawable/filter_button_background"
+            android:textColor="@color/black"
+            android:layout_marginEnd="8dp"/>
+        <Button
+            android:id="@+id/styleFilterButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Style"
+            android:background="@drawable/filter_button_background"
+            android:textColor="@color/black"
+            android:layout_marginEnd="8dp"/>
+        <Button
+            android:id="@+id/educatorFilterButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Educator"
+            android:background="@drawable/filter_button_background"
+            android:textColor="@color/black"
+            android:layout_marginEnd="8dp"/>
+        <Button
+            android:id="@+id/seriesFilterButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Series"
+            android:background="@drawable/filter_button_background"
+            android:textColor="@color/black"
+            android:layout_marginEnd="8dp"/>
+        <Button
+            android:id="@+id/clearFilterButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Clear Filter"
+            android:background="@drawable/filter_button_background"
+            android:textColor="@color/black"/>
+    </LinearLayout>
+</HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/viewAllCoursesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="16dp"/>
+
+    <TextView
+        android:id="@+id/noCoursesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No courses found for given search"
+        android:textColor="@color/white"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>
